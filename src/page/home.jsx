@@ -1,5 +1,6 @@
 import React from 'react'
 import { Zap } from 'lucide-react'
+import { Link } from 'react-router'
 export default function Home() {
     const cfdTools = [
         {
@@ -50,7 +51,7 @@ export default function Home() {
                     </div>
                     <div className="grid md:grid-cols-2 px-20 lg:grid-cols-3 gap-6">
                         {cfdTools.map((tool, index) => (
-                            <a key={index} href={tool.href} className="block">
+                            <Link key={index} to={tool.href} className="block">
                                 <div className="bg-white border border-gray-200 rounded-lg shadow-sm h-full hover:shadow-lg hover:border-emerald-200 transition-all duration-300 cursor-pointer group">
                                     {/* Card Header */}
                                     <div className=" border-b border-gray-100 p-4">
@@ -62,7 +63,7 @@ export default function Home() {
                                          <p className="text-sm text-gray-600 mb-4">{tool.description}</p>
                                     </div>
                                 </div>
-                            </a>
+                            </Link>
                         ))}
                     </div>
                 </div>
